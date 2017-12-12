@@ -28,6 +28,9 @@ pod 'JsenSegment'
 
 ```swift
 
+import JsenSegment.Swift
+
+
 /// initial
 /// 初始化
 let segment = JsenSegment.init(frame: CGRect.init(x: 0, y: 50, width: self.view.bounds.width, height: 50))

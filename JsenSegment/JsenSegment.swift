@@ -34,7 +34,7 @@ public enum JsenSegmentIndicatorPosition {
 
 public class JsenSegment: UIView {
     
-    typealias JsenSegmentSelectedBlock = (Int) -> Void
+    public typealias JsenSegmentSelectedBlock = (Int) -> Void
 
     fileprivate var collectionView: UICollectionView?
     
@@ -86,7 +86,7 @@ public class JsenSegment: UIView {
     ///   - dataSource: 内容
     ///   - selectedIndex: 默认选中的index 默认为 0
     ///   - selectedBlock: 选中回调
-    func config(with indicatorAttribute: JsenSegmentIndicatorAttribute?, dataSource: [JsenSegmentItemAttribute]?, selectedIndex: Int = 0, panAble: Bool = false,selectedBlock: @escaping JsenSegmentSelectedBlock) {
+    public func config(with indicatorAttribute: JsenSegmentIndicatorAttribute?, dataSource: [JsenSegmentItemAttribute]?, selectedIndex: Int = 0, panAble: Bool = false,selectedBlock: @escaping JsenSegmentSelectedBlock) {
         if let tempIndicatorAttribute = indicatorAttribute {
             self.indicatorAttribute = tempIndicatorAttribute
         }
