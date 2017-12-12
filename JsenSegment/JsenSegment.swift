@@ -8,24 +8,24 @@
 
 import UIKit
 
-struct JsenSegmentIndicatorAttribute {
+public struct JsenSegmentIndicatorAttribute {
     var color: UIColor = UIColor.green
     var type: JsenSegmentIndicatorType = .none
     var height: CGFloat = 3.0
     var position: JsenSegmentIndicatorPosition = .bottom
 }
 
-enum JsenSegmentIndicatorType {
+public enum JsenSegmentIndicatorType {
     case none
     case slider
 }
 
-enum JsenSegmentIndicatorPosition {
+public enum JsenSegmentIndicatorPosition {
     case top
     case bottom
 }
 
-class JsenSegment: UIView {
+public class JsenSegment: UIView {
     
     typealias JsenSegmentSelectedBlock = (Int) -> Void
 
@@ -79,7 +79,7 @@ class JsenSegment: UIView {
     ///   - dataSource: 内容
     ///   - selectedIndex: 默认选中的index 默认为 0
     ///   - selectedBlock: 选中回调
-    public func config(with indicatorAttribute: JsenSegmentIndicatorAttribute?, dataSource: [JsenSegmentItemAttribute]?, selectedIndex: Int = 0, panAble: Bool = false,selectedBlock: @escaping JsenSegmentSelectedBlock) {
+    func config(with indicatorAttribute: JsenSegmentIndicatorAttribute?, dataSource: [JsenSegmentItemAttribute]?, selectedIndex: Int = 0, panAble: Bool = false,selectedBlock: @escaping JsenSegmentSelectedBlock) {
         if let tempIndicatorAttribute = indicatorAttribute {
             self.indicatorAttribute = tempIndicatorAttribute
         }
@@ -140,6 +140,10 @@ class JsenSegment: UIView {
     func move(to: Int) {
         self.collectionView(self.collectionView!, didSelectItemAt: IndexPath.init(row: to, section: 0))
 
+        /// 更新indicator 的位置
+        if let indicator = self.indicator {
+            self.initialIndicatorFrame = indicator.frame
+        }
     }
     
     /// indicator 是否可用
@@ -206,7 +210,7 @@ class JsenSegment: UIView {
 }
 
 extension JsenSegment: UIGestureRecognizerDelegate {
-    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    override public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == panGesture {
             if self.indicatorAble() {
                 self.indicator?.frame.contains(gestureRecognizer.location(in: self))
@@ -260,9 +264,7 @@ extension JsenSegment: UICollectionViewDelegate,UICollectionViewDataSource {
                                                         y: (self.indicator?.frame.origin.y)!,
                                                         width: (self.indicator?.frame.size.width)!,
                                                         height: (self.indicator?.frame.size.height)!)
-                }, completion: { (completion) in
-                    self.initialIndicatorFrame = self.indicator?.frame
-                })
+                }, completion: nil)
                 
             }
             

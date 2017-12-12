@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JsenSegmentFlowLayout: UICollectionViewFlowLayout {
+ public class JsenSegmentFlowLayout: UICollectionViewFlowLayout {
     
     func config(itemSize: CGSize) {
         self.itemSize = itemSize

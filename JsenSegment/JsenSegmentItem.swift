@@ -15,7 +15,7 @@ let JsenDefaultImageName:String = "jsen_segment_car_nor.png"
 let JsenDefaultSelectedImageName:String = "jsen_segment_car_sel.png"
 
 /// item属性
-struct JsenSegmentItemAttribute {
+public struct JsenSegmentItemAttribute {
     var title: NSAttributedString?
     var backgroundColor: UIColor
     var type: JsenSegmentItemType
@@ -81,12 +81,12 @@ struct JsenSegmentItemAttribute {
 ///
 /// - text: 展示文字
 /// - image: 展示图片
-enum JsenSegmentItemType {
+public enum JsenSegmentItemType {
     case text
     case image
 }
 
-class JsenSegmentItem: UICollectionViewCell {
+public class JsenSegmentItem: UICollectionViewCell {
     
     /// icon 正方形，根据当前item 的最短边设置边长
     fileprivate var imageView: UIImageView?
@@ -100,7 +100,7 @@ class JsenSegmentItem: UICollectionViewCell {
 
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.init()
     }
     
