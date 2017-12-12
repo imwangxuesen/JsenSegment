@@ -144,7 +144,7 @@ public class JsenSegment: UIView {
     /// 选中某一个segment
     ///
     /// - Parameter to: 目标index
-    func move(to: Int) {
+    public func move(to: Int) {
         self.collectionView(self.collectionView!, didSelectItemAt: IndexPath.init(row: to, section: 0))
 
         /// 更新indicator 的位置
@@ -224,6 +224,10 @@ extension JsenSegment: UIGestureRecognizerDelegate {
             }
         }
         return super.gestureRecognizerShouldBegin(gestureRecognizer)
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 

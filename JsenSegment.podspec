@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JsenSegment"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "A custom segment that can custom normal & selected text and image or backgroundColor.Support Swift4.0 and later"
   s.homepage     = "https://github.com/imwangxuesen/JsenSegment"
   s.license      = "MIT"
