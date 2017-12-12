@@ -13,7 +13,9 @@ A custom segment that can custom normal &amp; selected text and image or backgro
 # Communication
 
 •	If you **found a bug**，open an issue.
+
 •	If you **have a feature request**, open an issue.
+
 •	If you **want to contribute**, submit a pull request.
 # Installation
 [CocoaPods](http://cocoapods.org/) is a dependency manager for Cocoa projects. You can install it with the following command:
@@ -24,7 +26,7 @@ A custom segment that can custom normal &amp; selected text and image or backgro
 
 # Usage
 
-```
+```swift
 
         /// initial
         /// 初始化
