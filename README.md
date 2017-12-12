@@ -59,10 +59,10 @@ let itemAttribute2 = JsenSegmentItemAttribute(title: title,
         
 /// indicatorAttribute
 /// 滑块指示器属性
-let indicatorAttribute = JsenSegmentIndicatorAttribute.init(color: UIColor.green,
-                                                             type: .slider,
-                                                           height: 3.0,
-                                                         position: .bottom)
+let indicatorAttribute = JsenSegmentIndicatorAttribute.init(with:UIColor.ufGreenColor(),
+									         type: .slider,
+									       height: 5.0,
+                                                                    position: .bottom)
         
 /// config
 /// 配置方法

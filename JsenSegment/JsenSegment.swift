@@ -13,6 +13,13 @@ public struct JsenSegmentIndicatorAttribute {
     var type: JsenSegmentIndicatorType = .none
     var height: CGFloat = 3.0
     var position: JsenSegmentIndicatorPosition = .bottom
+    
+    public init(with color: UIColor = UIColor.green, type: JsenSegmentIndicatorType = .none, height: CGFloat = 3.0 ,position: JsenSegmentIndicatorPosition = .bottom) {
+        self.color = color
+        self.type = type
+        self.height = height
+        self.position = position
+    }
 }
 
 public enum JsenSegmentIndicatorType {
