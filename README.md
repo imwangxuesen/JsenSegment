@@ -40,7 +40,7 @@ let title = NSAttributedString.init(string: "Click Me",
 /// selected title
 /// 选中时 title 文字
 let selectedTitle = NSAttributedString.init(string: "Selected Item",
-										attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17) ,NSAttributedStringKey.foregroundColor : UIColor.red])
+                                        attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17) ,NSAttributedStringKey.foregroundColor : UIColor.red])
         
 /// itemAttribute
 /// item属性
