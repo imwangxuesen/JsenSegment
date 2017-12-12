@@ -140,10 +140,6 @@ class JsenSegment: UIView {
     func move(to: Int) {
         self.collectionView(self.collectionView!, didSelectItemAt: IndexPath.init(row: to, section: 0))
 
-        /// 更新indicator 的位置
-        if let indicator = self.indicator {
-            self.initialIndicatorFrame = indicator.frame
-        }
     }
     
     /// indicator 是否可用
@@ -264,7 +260,9 @@ extension JsenSegment: UICollectionViewDelegate,UICollectionViewDataSource {
                                                         y: (self.indicator?.frame.origin.y)!,
                                                         width: (self.indicator?.frame.size.width)!,
                                                         height: (self.indicator?.frame.size.height)!)
-                }, completion: nil)
+                }, completion: { (completion) in
+                    self.initialIndicatorFrame = self.indicator?.frame
+                })
                 
             }
             
