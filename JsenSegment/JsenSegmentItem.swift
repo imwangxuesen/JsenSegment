@@ -9,10 +9,10 @@
 import UIKit
 
 /// 默认的item icon normal 状态下的图片
-let JsenDefaultImageName:String = "jsen_segment_car_nor.png"
+public let JsenDefaultImageName:String = "jsen_segment_car_nor.png"
 
 /// 默认的item icon 选中状态下的图片
-let JsenDefaultSelectedImageName:String = "jsen_segment_car_sel.png"
+public let JsenDefaultSelectedImageName:String = "jsen_segment_car_sel.png"
 
 /// item属性
 public struct JsenSegmentItemAttribute {
@@ -27,7 +27,7 @@ public struct JsenSegmentItemAttribute {
     var selectedImageName: String?
     
     
-    static func config(title: NSAttributedString? ,
+    public static func config(title: NSAttributedString? ,
           backgroundColor: UIColor = UIColor.white ,
           selectedTitle: NSAttributedString? ,
           selectedBackgroundColor: UIColor = UIColor.groupTableViewBackground) -> JsenSegmentItemAttribute {
@@ -35,7 +35,7 @@ public struct JsenSegmentItemAttribute {
         return self.init(title: title, backgroundColor: backgroundColor, type: JsenSegmentItemType.text, imageName: nil, selectedTitle: selectedTitle, selectedBackgroundColor: selectedBackgroundColor, selectedType: JsenSegmentItemType.text, selectedImageName: nil)
     }
     
-    static func config(backgroundColor: UIColor = UIColor.white ,
+    public static func config(backgroundColor: UIColor = UIColor.white ,
          imageName: String? = JsenDefaultImageName ,
          selectedBackgroundColor: UIColor = UIColor.groupTableViewBackground ,
          selectedImageName: String? = JsenDefaultSelectedImageName) -> JsenSegmentItemAttribute{
@@ -44,7 +44,7 @@ public struct JsenSegmentItemAttribute {
         
     }
     
-    init(title: NSAttributedString? ,
+    public init(title: NSAttributedString? ,
          backgroundColor: UIColor = UIColor.white ,
          type: JsenSegmentItemType = JsenSegmentItemType.text ,
          imageName: String? = JsenDefaultImageName ,
@@ -127,7 +127,7 @@ public class JsenSegmentItem: UICollectionViewCell {
     /// - Parameters:
     ///   - attribute: item 属性
     ///   - selected: 是否选中
-    func update(with attribute:JsenSegmentItemAttribute ,selected: Bool) {
+    public func update(with attribute:JsenSegmentItemAttribute ,selected: Bool) {
         switch attribute.type {
         case .image: /// 图片
             self.imageView?.isHidden = false
